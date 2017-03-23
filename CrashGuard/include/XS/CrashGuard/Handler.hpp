@@ -27,9 +27,10 @@
  * @brief       ...
  */
 
-#ifndef XS_CRASH_GUARD_HPP
-#define XS_CRASH_GUARD_HPP
+#ifndef XS_CRASH_GUARD_HANDLER_HPP
+#define XS_CRASH_GUARD_HANDLER_HPP
 
+#include <XS/PIMPL/Object.hpp>
 #include <stdint.h>
 #include <functional>
 
@@ -37,9 +38,21 @@ namespace XS
 {
     namespace CrashGuard
     {
-        uint64_t InstallHandler( std::function< void( void ) > handler );
-        void     RemoveHandler( uint64_t handlerID );
+        class Handler: public XS::PIMPL::Object< Handler >
+        {
+            public:
+                
+                using XS::PIMPL::Object< Handler >::impl;
+                
+                Handler( void );
+                Handler( uint64_t handlerID, std::function< void( void ) > f );
+                
+                void operator ()( void ) const;
+                
+                uint64_t                      HandlerID( void )       const;
+                std::function< void( void ) > HandlerFunction( void ) const;
+        };
     }
 }
 
-#endif /* XS_CRASH_GUARD_HPP */
+#endif /* XS_CRASH_GUARD_HANDLER_HPP */

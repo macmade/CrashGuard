@@ -9,7 +9,19 @@
 /* Begin PBXBuildFile section */
 		055FBCAF1E83D98D001301A9 /* CrashGuard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCAE1E83D98D001301A9 /* CrashGuard.cpp */; };
 		055FBCB71E83D9D7001301A9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCB61E83D9D7001301A9 /* main.cpp */; };
+		055FBCBD1E83DB29001301A9 /* libCrashGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EC8A471E81E854007233F2 /* libCrashGuard.a */; };
+		055FBCC21E83DE74001301A9 /* Handler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCBF1E83DD00001301A9 /* Handler.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		055FBCBB1E83DB25001301A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05BD894A1A13FF4700A43CD8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05EC8A461E81E854007233F2;
+			remoteInfo = CrashGuard;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		055FBCB21E83D9D7001301A9 /* CopyFiles */ = {
@@ -30,6 +42,8 @@
 		055FBCAE1E83D98D001301A9 /* CrashGuard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CrashGuard.cpp; sourceTree = "<group>"; };
 		055FBCB41E83D9D7001301A9 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
 		055FBCB61E83D9D7001301A9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		055FBCBF1E83DD00001301A9 /* Handler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Handler.cpp; sourceTree = "<group>"; };
+		055FBCC11E83DD07001301A9 /* Handler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Handler.hpp; sourceTree = "<group>"; };
 		05EC8A471E81E854007233F2 /* libCrashGuard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCrashGuard.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -38,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055FBCBD1E83DB29001301A9 /* libCrashGuard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +86,7 @@
 		055FBCAB1E83D88A001301A9 /* XS */ = {
 			isa = PBXGroup;
 			children = (
+				055FBCC01E83DD07001301A9 /* CrashGuard */,
 				055FBCAD1E83D97E001301A9 /* CrashGuard.hpp */,
 			);
 			path = XS;
@@ -79,6 +95,7 @@
 		055FBCAC1E83D88A001301A9 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				055FBCBE1E83DD00001301A9 /* CrashGuard */,
 				055FBCAE1E83D98D001301A9 /* CrashGuard.cpp */,
 			);
 			path = source;
@@ -90,6 +107,22 @@
 				055FBCB61E83D9D7001301A9 /* main.cpp */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		055FBCBE1E83DD00001301A9 /* CrashGuard */ = {
+			isa = PBXGroup;
+			children = (
+				055FBCBF1E83DD00001301A9 /* Handler.cpp */,
+			);
+			path = CrashGuard;
+			sourceTree = "<group>";
+		};
+		055FBCC01E83DD07001301A9 /* CrashGuard */ = {
+			isa = PBXGroup;
+			children = (
+				055FBCC11E83DD07001301A9 /* Handler.hpp */,
+			);
+			path = CrashGuard;
 			sourceTree = "<group>";
 		};
 		05BD89491A13FF4700A43CD8 = {
@@ -136,6 +169,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				055FBCBC1E83DB25001301A9 /* PBXTargetDependency */,
 			);
 			name = Test;
 			productName = Test;
@@ -209,11 +243,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055FBCC21E83DE74001301A9 /* Handler.cpp in Sources */,
 				055FBCAF1E83D98D001301A9 /* CrashGuard.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		055FBCBC1E83DB25001301A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05EC8A461E81E854007233F2 /* CrashGuard */;
+			targetProxy = 055FBCBB1E83DB25001301A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		055FBCB91E83D9D7001301A9 /* Debug */ = {
@@ -221,6 +264,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
 			};
 			name = Debug;
 		};
@@ -229,6 +273,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = NO;
 			};
 			name = Release;
 		};

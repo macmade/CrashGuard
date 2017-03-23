@@ -27,7 +27,33 @@
  * @brief       ...
  */
 
+#include <iostream>
+#include <XS/CrashGuard.hpp>
+
 int main( void )
 {
+    XS::CrashGuard::InstallHandler
+    (
+        []
+        {
+            std::cout << "Crash handler #1" << std::endl;
+        }
+    );
+    
+    XS::CrashGuard::InstallHandler
+    (
+        []
+        {
+            std::cout << "Crash handler #2" << std::endl;
+        }
+    );
+    
+    {
+        volatile char * p;
+        
+        p      = nullptr;
+        *( p ) = 0;
+    }
+    
     return 0;
 }
