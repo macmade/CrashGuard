@@ -1,0 +1,3 @@
+language: objective-c
+script:
+- xctool -project "CrashGuard.xcodeproj" -scheme "CrashGuard" build
