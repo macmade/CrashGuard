@@ -6,13 +6,41 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		055FBCAF1E83D98D001301A9 /* CrashGuard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCAE1E83D98D001301A9 /* CrashGuard.cpp */; };
+		055FBCB71E83D9D7001301A9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCB61E83D9D7001301A9 /* main.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		055FBCB21E83D9D7001301A9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		05110D041C1F121C00EE6851 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		05110D051C1F121C00EE6851 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		055FBCAD1E83D97E001301A9 /* CrashGuard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CrashGuard.hpp; sourceTree = "<group>"; };
+		055FBCAE1E83D98D001301A9 /* CrashGuard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CrashGuard.cpp; sourceTree = "<group>"; };
+		055FBCB41E83D9D7001301A9 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
+		055FBCB61E83D9D7001301A9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		05EC8A471E81E854007233F2 /* libCrashGuard.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCrashGuard.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		055FBCB11E83D9D7001301A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05EC8A441E81E854007233F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,6 +71,7 @@
 		055FBCAB1E83D88A001301A9 /* XS */ = {
 			isa = PBXGroup;
 			children = (
+				055FBCAD1E83D97E001301A9 /* CrashGuard.hpp */,
 			);
 			path = XS;
 			sourceTree = "<group>";
@@ -50,8 +79,17 @@
 		055FBCAC1E83D88A001301A9 /* source */ = {
 			isa = PBXGroup;
 			children = (
+				055FBCAE1E83D98D001301A9 /* CrashGuard.cpp */,
 			);
 			path = source;
+			sourceTree = "<group>";
+		};
+		055FBCB51E83D9D7001301A9 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				055FBCB61E83D9D7001301A9 /* main.cpp */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		05BD89491A13FF4700A43CD8 = {
@@ -60,6 +98,7 @@
 				05110D041C1F121C00EE6851 /* LICENSE */,
 				05110D051C1F121C00EE6851 /* README.md */,
 				055FBCA91E83D88A001301A9 /* CrashGuard */,
+				055FBCB51E83D9D7001301A9 /* Test */,
 				05BD89531A13FF4700A43CD8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				05EC8A471E81E854007233F2 /* libCrashGuard.a */,
+				055FBCB41E83D9D7001301A9 /* Test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +125,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		055FBCB31E83D9D7001301A9 /* Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055FBCB81E83D9D7001301A9 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildPhases = (
+				055FBCB01E83D9D7001301A9 /* Sources */,
+				055FBCB11E83D9D7001301A9 /* Frameworks */,
+				055FBCB21E83D9D7001301A9 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Test;
+			productName = Test;
+			productReference = 055FBCB41E83D9D7001301A9 /* Test */;
+			productType = "com.apple.product-type.tool";
+		};
 		05EC8A461E81E854007233F2 /* CrashGuard */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05EC8A551E81E854007233F2 /* Build configuration list for PBXNativeTarget "CrashGuard" */;
@@ -111,6 +168,10 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "XS-Labs";
 				TargetAttributes = {
+					055FBCB31E83D9D7001301A9 = {
+						CreatedOnToolsVersion = 8.3;
+						ProvisioningStyle = Automatic;
+					};
 					05EC8A461E81E854007233F2 = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -130,21 +191,47 @@
 			projectRoot = "";
 			targets = (
 				05EC8A461E81E854007233F2 /* CrashGuard */,
+				055FBCB31E83D9D7001301A9 /* Test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		055FBCB01E83D9D7001301A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055FBCB71E83D9D7001301A9 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		05EC8A431E81E854007233F2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055FBCAF1E83D98D001301A9 /* CrashGuard.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		055FBCB91E83D9D7001301A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		055FBCBA1E83D9D7001301A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		05BD89571A13FF4700A43CD8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -155,6 +242,7 @@
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_MEMORY_MANAGEMENT = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ANALYZER_OBJC_ATSYNC = YES;
 				CLANG_ANALYZER_OBJC_COLLECTIONS = YES;
 				CLANG_ANALYZER_OBJC_DEALLOC = YES;
@@ -274,6 +362,7 @@
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_MEMORY_MANAGEMENT = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_ANALYZER_OBJC_ATSYNC = YES;
 				CLANG_ANALYZER_OBJC_COLLECTIONS = YES;
 				CLANG_ANALYZER_OBJC_DEALLOC = YES;
@@ -399,6 +488,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		055FBCB81E83D9D7001301A9 /* Build configuration list for PBXNativeTarget "Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055FBCB91E83D9D7001301A9 /* Debug */,
+				055FBCBA1E83D9D7001301A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		05BD894D1A13FF4700A43CD8 /* Build configuration list for PBXProject "CrashGuard" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
