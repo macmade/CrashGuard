@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050B83E41EB919CB0090EA12 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 050B83E31EB919CB0090EA12 /* libc++.tbd */; };
 		055FBCAF1E83D98D001301A9 /* CrashGuard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCAE1E83D98D001301A9 /* CrashGuard.cpp */; };
 		055FBCB71E83D9D7001301A9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCB61E83D9D7001301A9 /* main.cpp */; };
 		055FBCBD1E83DB29001301A9 /* libCrashGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EC8A471E81E854007233F2 /* libCrashGuard.a */; };
@@ -36,6 +37,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		050B83E31EB919CB0090EA12 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		05110D041C1F121C00EE6851 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		05110D051C1F121C00EE6851 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		055FBCAD1E83D97E001301A9 /* CrashGuard.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CrashGuard.hpp; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050B83E41EB919CB0090EA12 /* libc++.tbd in Frameworks */,
 				055FBCBD1E83DB29001301A9 /* libCrashGuard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050B83E21EB919CB0090EA12 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				050B83E31EB919CB0090EA12 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		055FBCA91E83D88A001301A9 /* CrashGuard */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +144,7 @@
 				055FBCA91E83D88A001301A9 /* CrashGuard */,
 				055FBCB51E83D9D7001301A9 /* Test */,
 				05BD89531A13FF4700A43CD8 /* Products */,
+				050B83E21EB919CB0090EA12 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "$(SRCROOT)/Scripts/ccache.sh";
 				CLANG_ANALYZER_DEADCODE_DEADSTORES = YES;
 				CLANG_ANALYZER_GCD = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_EMPTY_CONTEXT = YES;
@@ -307,7 +320,7 @@
 				CLANG_ANALYZER_SECURITY_KEYCHAIN_API = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
@@ -427,7 +440,7 @@
 				CLANG_ANALYZER_SECURITY_KEYCHAIN_API = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_STATIC_ANALYZER_MODE = deep;
 				CLANG_STATIC_ANALYZER_MODE_ON_ANALYZE_ACTION = deep;
@@ -513,6 +526,7 @@
 		05EC8A4F1E81E854007233F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = "";
 				CODE_SIGN_IDENTITY = "-";
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,6 +537,7 @@
 		05EC8A501E81E854007233F2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = "";
 				CODE_SIGN_IDENTITY = "-";
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +555,7 @@
 				055FBCBA1E83D9D7001301A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05BD894D1A13FF4700A43CD8 /* Build configuration list for PBXProject "CrashGuard" */ = {
 			isa = XCConfigurationList;
