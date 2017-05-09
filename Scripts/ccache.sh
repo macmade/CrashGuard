@@ -12,8 +12,12 @@ else
     
 fi
 
-if type -p ccache > /dev/null 2>&1; then
-        
+if [ "$CC" == "analyze-cc" ]; then
+    
+    exec $CC "$@"
+    
+elif [ type -p ccache > /dev/null 2>&1 ]; then
+    
     exec ccache $CLANG "$@"
     
 else
