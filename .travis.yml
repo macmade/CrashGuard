@@ -10,9 +10,9 @@ install:
 - easy_install --user scan-build
 script:
 - set -o pipefail && xcodebuild -project "CrashGuard.xcodeproj" -scheme "CrashGuard" build | xcpretty
-- set -o pipefail && scan-build --status-bugs xcodebuild -project "CrashGuard.xcodeproj" -scheme "CrashGuard" analyze | xcpretty
+- set -o pipefail && scan-build --status-bugs xcodebuild -project "CrashGuard.xcodeproj" -scheme "CrashGuard" clean analyze | xcpretty
 - set -o pipefail && xcodebuild -project "CrashGuard.xcodeproj" -scheme "Test" build | xcpretty
-- set -o pipefail && scan-build --status-bugs xcodebuild -project "CrashGuard.xcodeproj" -scheme "Test" analyze | xcpretty
+- set -o pipefail && scan-build --status-bugs xcodebuild -project "CrashGuard.xcodeproj" -scheme "Test" clean analyze | xcpretty
 before_script:
 - ccache -s
 - ccache -z
