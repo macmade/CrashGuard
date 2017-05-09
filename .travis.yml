@@ -1,3 +1,22 @@
 language: objective-c
+cache:
+    directories:
+    - $HOME/.ccache
+install:
+- gem install xcpretty
+- brew install ccache
+- PATH=$PATH:/usr/local/opt/ccache/libexec
+- export PYTHONUSERBASE=~/.local
+- easy_install --user scan-build
 script:
-- xctool -project "CrashGuard.xcodeproj" -scheme "CrashGuard" build
+- set -o pipefail && xcodebuild -project "CrashGuard.xcodeproj" -scheme "CrashGuard" build | xcpretty
+- set -o pipefail && scan-build --status-bugs xcodebuild -project "CrashGuard.xcodeproj" -scheme "CrashGuard" analyze | xcpretty
+- set -o pipefail && xcodebuild -project "CrashGuard.xcodeproj" -scheme "Test" build | xcpretty
+- set -o pipefail && scan-build --status-bugs xcodebuild -project "CrashGuard.xcodeproj" -scheme "Test" analyze | xcpretty
+before_script:
+- ccache -s
+- ccache -z
+after_script:
+- ccache -s
+notifications:
+    slack: xs-labs:FXh1yLXNkpcVxKZhZU6icdhI
