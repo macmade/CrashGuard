@@ -364,7 +364,7 @@
 		05BD894A1A13FF4700A43CD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "XS-Labs";
 				TargetAttributes = {
 					055FBCB31E83D9D7001301A9 = {
@@ -381,10 +381,11 @@
 			};
 			buildConfigurationList = 05BD894D1A13FF4700A43CD8 /* Build configuration list for PBXProject "CrashGuard" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 05BD89491A13FF4700A43CD8;
 			productRefGroup = 05BD89531A13FF4700A43CD8 /* Products */;
