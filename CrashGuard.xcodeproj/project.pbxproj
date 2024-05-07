@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		050B83E41EB919CB0090EA12 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 050B83E31EB919CB0090EA12 /* libc++.tbd */; };
 		055FBCAF1E83D98D001301A9 /* CrashGuard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCAE1E83D98D001301A9 /* CrashGuard.cpp */; };
 		055FBCB71E83D9D7001301A9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 055FBCB61E83D9D7001301A9 /* main.cpp */; };
 		055FBCBD1E83DB29001301A9 /* libCrashGuard.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05EC8A471E81E854007233F2 /* libCrashGuard.a */; };
@@ -94,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				050B83E41EB919CB0090EA12 /* libc++.tbd in Frameworks */,
 				055FBCBD1E83DB29001301A9 /* libCrashGuard.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +362,7 @@
 		05BD894A1A13FF4700A43CD8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = "XS-Labs";
 				TargetAttributes = {
 					055FBCB31E83D9D7001301A9 = {
